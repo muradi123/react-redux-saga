@@ -1,0 +1,6 @@
+@media only screen and (max-width: 800px) {
+  .home-page-inner {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
