@@ -1,7 +1,7 @@
 import { takeLatest } from "redux-saga/effects";
-import { handleGetUser } from "./handlers/user";
+import { handleGetFilms } from "./handlers/films";
 import { getFilms } from "../reducers/films";
 
 export function* watcherSaga() {
-  yield takeLatest(getFilms, handleGetUser);
+  yield takeLatest(getFilms, handleGetFilms);
 }
