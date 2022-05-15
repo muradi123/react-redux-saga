@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import GetFilms from "./Getfilms";
+import GetFilms from "../../Components/films/Getfilms";
 import { useRef } from "react";
 
 const ProfilePage = (props) => {
