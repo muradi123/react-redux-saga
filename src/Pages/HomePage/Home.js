@@ -1,16 +1,32 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
 import GetFilms from "./Getfilms";
-const Home = () => {
-  const state = useSelector((state) => state.auth.login);
-  if (state === "murad") {
-    console.log("murad");
-  }
+import { useRef } from "react";
+
+const ProfilePage = (props) => {
+  const [searchItem, setSearchItem] = useState("");
+  const childCompRef = useRef();
+
   return (
-    <div>
-      <GetFilms />
+    <div className="home-page-container">
+      <div className="home-page-inner">
+        <div className="home-page-header">
+          <input
+            className="search-film"
+            type="text"
+            placeholder="search film"
+            onChange={(e) => {
+              childCompRef.current.searchItems(e.target.value);
+            }}
+          />
+          <div className="home-page-title">{props.login}</div>
+        </div>
+        <div className="films-container">
+          <GetFilms ref={childCompRef} />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default ProfilePage;
