@@ -19,7 +19,7 @@ const ProfilePage = (props) => {
               childCompRef.current.searchItems(e.target.value);
             }}
           />
-          <div className="home-page-title">{props.login}</div>
+          <div className="home-page-title">{props.userName}</div>
         </div>
         <div className="films-container">
           <GetFilms ref={childCompRef} />
